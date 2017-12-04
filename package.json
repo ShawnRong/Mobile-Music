@@ -1,0 +1,9 @@
+{
+  "name": "qq-music",
+  "version": "1.0.0",
+  "description": "QQ music imitation",
+  "main": "index.js",
+  "repository": "https://github.com/ShawnRong/Mobile-Music.git",
+  "author": "rongshawn@gmail.com",
+  "license": "MIT"
+}
