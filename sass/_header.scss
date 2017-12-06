@@ -1,0 +1,29 @@
+.mod-header {
+  background: $header-background;
+  height: $header-height;
+  width: 100%;
+  position: relative;
+
+  .logo {
+    background: url('../imgs/logo.png') no-repeat;
+    background-size: cover;
+    width: $logo-width;
+    height: $logo-height;
+    margin: 9px 0 0 10px;
+    float: left;
+    text-indent: -9999px;
+  }
+
+  .btn-download {
+    position: absolute;
+    line-height: $btn-download-line-height;
+    background: $btn-download-background;
+    font-size: 14px;
+    right: 10px;
+    top: 8px;
+    padding:0 12px;
+    border-radius: 99px;
+    color: #fff;
+  }
+
+}
