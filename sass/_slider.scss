@@ -1,0 +1,39 @@
+.ui-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  .ui-slider-group{
+    width: 500%;
+    display: flex;
+    transition: .5s;
+    .ui-slider-item{
+      width: 100%;
+      a {
+        img{
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+  .ui-slider-dots{
+    position: absolute;
+    width: 100%;
+    bottom: 6px;
+    left:0;
+    right:0;
+    padding: 0 6px;
+    text-align: center;
+    b {
+      display: inline-block;
+      margin: 0 4px;
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(144,144,144,.8);
+    }
+    .ui-state-active {
+      background: #fff;
+    }
+  }
+}

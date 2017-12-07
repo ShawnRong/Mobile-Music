@@ -1,5 +1,21 @@
-import('../sass/app.scss');
+import('../sass/app.scss')
+//ES6 import
+import Slider from './components/slider'
+//CommonJS
+// const Slider = require('./components/slider')
+
 
 (function(){
-  console.log('hello')
+  const slider = new Slider(
+    'slider',
+    {
+      slides: [
+        {link: '#' ,image: './imgs/halin.jpg'},
+        {link: '#' ,image: './imgs/hunya.jpg'},
+        {link: '#' ,image: './imgs/liyuchun.jpg'},
+        {link: '#' ,image: './imgs/liyugang.jpg'},
+        {link: '#' ,image: './imgs/sunyanzi.jpg'},
+      ]
+    }
+  )
 })()
