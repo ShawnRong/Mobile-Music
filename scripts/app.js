@@ -1,6 +1,7 @@
 import('../sass/app.scss')
 //ES6 import
 import Slider from './components/slider'
+import NavBar from './components/navbar'
 //CommonJS
 // const Slider = require('./components/slider')
 
@@ -18,4 +19,5 @@ import Slider from './components/slider'
       ]
     }
   )
+  NavBar()
 })()

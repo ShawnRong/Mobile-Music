@@ -12,37 +12,23 @@
       <i class="logo">QQ音乐</i>
       <a href="#" class="btn-download">下载APP</a>
     </header>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li class="nav-item active" data-role="tab" data-view=".recom-view">推荐</li>
+        <li class="nav-item" data-role="tab" data-view=".rank-view">排行榜</li>
+        <li class="nav-item" data-role="tab" data-view=".search-view">搜索</li>
+      </ul>
+    </nav>
     <div class="content">
-      <div id="recom_wrap">
+      <div id="recom_wrap" class="recom-view">
         <div class="ui-slider" id="slider">
-          <!-- <div class="ui-slider-group">
-            <div class="ui-slider-item">
-              <a href="#">
-                <img src="./imgs/halin.jpg" alt="halin">
-              </a>
-            </div>
-            <div class="ui-slider-item">
-              <a href="#">
-                <img src="./imgs/hunya.jpg" alt="hunya">
-              </a>
-            </div>
-            <div class="ui-slider-item">
-              <a href="#">
-                <img src="./imgs/liyuchun.jpg" alt="liyuchun">
-              </a>
-            </div>
-            <div class="ui-slider-item">
-              <a href="#">
-                <img src="./imgs/liyugang.jpg" alt="liyugang">
-              </a>
-            </div>
-            <div class="ui-slider-item">
-              <a href="#">
-                <img src="./imgs/sunyanzi.jpg" alt="sunyanzi">
-              </a>
-            </div>
-          </div> -->
         </div>
+      </div>
+      <div class="rank-view tab-content hide">
+        排行榜
+      </div>
+      <div class="search-view tab-content hide">
+        搜索
       </div>
     </div>
     <script src="./dist/app.js"></script>

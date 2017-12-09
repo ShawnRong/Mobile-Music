@@ -1,0 +1,26 @@
+.nav-list {
+  display: flex;
+  align-items: center;
+  .nav-item {
+    color: rgba(0,0,0,.6);
+    flex: 1;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    &.active{
+      color: $nav-bar-active-color;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: $nav-bar-active-color;
+      }
+    }
+  }
+}
