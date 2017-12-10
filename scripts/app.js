@@ -2,6 +2,7 @@ import('../sass/app.scss')
 //ES6 import
 import Slider from './components/slider'
 import NavBar from './components/navbar'
+import lazyload from './components/lazyload'
 //CommonJS
 // const Slider = require('./components/slider')
 
@@ -24,6 +25,7 @@ import NavBar from './components/navbar'
     new Slider('slider', slides)
     renderRadios(json.data.radioList)
     renderSongLists(json.data.songList)
+    lazyload(document.querySelectorAll('.lazyload'))
   }
 
   //radios
@@ -33,7 +35,7 @@ import NavBar from './components/navbar'
         <li class="list-item">
           <a href="#" class="list-main">
             <div class="list-media">
-            <img src="${radio.picUrl}" alt="#">
+            <img class="lazyload" src="../imgs/default_pic.jpg" data-src="${radio.picUrl}" alt="#">
             <span class="icon icon-play"></span>
             </div>
             <div class="list-info"><h3>${radio.Ftitle}</h3></div>
@@ -50,7 +52,7 @@ import NavBar from './components/navbar'
         <li class="list-item">
           <a href="#" class="list-main">
             <div class="list-media">
-            <img src="${songlist.picUrl}" alt="#">
+            <img class="lazyload" src="../imgs/default_pic.jpg" data-src="${songlist.picUrl}" alt="#">
             <span class="icon icon-play"></span>
             </div>
             <div class="list-info"><h3>${songlist.Ftitle}</h3></div>
