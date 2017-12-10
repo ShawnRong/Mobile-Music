@@ -1,9 +1,9 @@
 class Slider {
-  constructor(el, options){
+  constructor(el, slides, interval=3000){
     typeof el === 'string' ? this.el = document.getElementById(el): el
-    this.slides = options.slides
+    this.slides = slides
     this.index = 0
-    this.interval = options.interval || 3000
+    this.interval = interval
     this.render()
     this.play()
   }

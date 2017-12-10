@@ -1,1 +1,13 @@
 //推荐栏样式
+#recom-view{
+  #radios {
+    margin-bottom: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #songlist {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  @import "_recom_list";
+}

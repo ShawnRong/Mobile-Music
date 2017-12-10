@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="./imgs/favicon.ico"/>
     <link rel="stylesheet" href="./dist/app.bundle.css">
     <title>QQ 音乐</title>
   </head>
@@ -14,20 +15,27 @@
     </header>
     <nav class="navbar">
       <ul class="nav-list">
-        <li class="nav-item active" data-role="tab" data-view=".recom-view">推荐</li>
-        <li class="nav-item" data-role="tab" data-view=".rank-view">排行榜</li>
-        <li class="nav-item" data-role="tab" data-view=".search-view">搜索</li>
+        <li class="nav-item active" data-role="tab" data-view="#recom-view">推荐</li>
+        <li class="nav-item" data-role="tab" data-view="#rank-view">排行榜</li>
+        <li class="nav-item" data-role="tab" data-view="#search-view">搜索</li>
       </ul>
     </nav>
     <div class="content">
-      <div id="recom_wrap" class="recom-view">
-        <div class="ui-slider" id="slider">
+      <div id="recom-view">
+        <div class="ui-slider" id="slider"></div>
+        <div id="radios">
+          <h2 class="list-title">电台</h2>
+          <ul class="list-group" id="radios-group"></ul>
+        </div>
+        <div id="songlist">
+          <h2 class="list-title">热门歌单</h2>
+          <ul class="list-group" id="songlists-group"></ul>
         </div>
       </div>
-      <div class="rank-view tab-content hide">
+      <div id="rank-view" class="hide">
         排行榜
       </div>
-      <div class="search-view tab-content hide">
+      <div id="search-view" class="hide">
         搜索
       </div>
     </div>

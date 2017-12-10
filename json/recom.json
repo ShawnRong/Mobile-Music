@@ -1,0 +1,56 @@
+{
+  "code": 0,
+  "data": {
+    "slider": [{
+      "linkUrl": "https://y.qq.com/m/act/BattleofTeana2/v3/index.html?ADTAG=jiaodiantu",
+      "picUrl": "http://y.gtimg.cn/music/photo_new/T003R720x288M000000TKGAD0uRLzl.jpg",
+      "id": 13301
+    }, {
+      "linkUrl": "https://y.qq.com/m/act/voiceofdreams2/v3/index.html?ADTAG=jiaodiantu",
+      "picUrl": "http://y.gtimg.cn/music/photo_new/T003R720x288M000003j9b163VNMYx.jpg",
+      "id": 13290
+    }, {
+      "linkUrl": "https://y.qq.com/m/digitalbum/gold/index.html?_video=true&id=3751508&g_f=shoujijiaodian",
+      "picUrl": "http://y.gtimg.cn/music/photo_new/T003R720x288M000002Mfam02mcGcz.jpg",
+      "id": 13286
+    }, {
+      "linkUrl": "https://c.y.qq.com/node/m/client/music_headline/index.html?_hidehd=1&_button=2&zid=437515",
+      "picUrl": "http://y.gtimg.cn/music/photo_new/T003R720x288M000001srOiL15XDpY.jpg",
+      "id": 13326
+    }, {
+      "linkUrl": "https://y.qq.com/m/act/chinaband/v3/index.html?ADTAG=jiaodiantu",
+      "picUrl": "http://y.gtimg.cn/music/photo_new/T003R720x288M000002gZ3YA2Tk8ND.jpg",
+      "id": 13262
+    }],
+    "radioList": [{
+      "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg",
+      "Ftitle": "热歌1",
+      "radioid": 199
+    },{
+      "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg",
+      "Ftitle": "热歌2",
+      "radioid": 199
+    }],
+    "songList": [{
+      "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg",
+      "Ftitle": "热歌21",
+      "radioid": 199
+    },{
+      "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg",
+      "Ftitle": "热歌22",
+      "radioid": 199
+    },{
+      "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg",
+      "Ftitle": "热歌23",
+      "radioid": 199
+    },{
+      "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg",
+      "Ftitle": "热歌24",
+      "radioid": 199
+    },{
+      "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg",
+      "Ftitle": "热歌25",
+      "radioid": 199
+    }]
+  }
+}
