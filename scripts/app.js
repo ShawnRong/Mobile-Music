@@ -14,6 +14,11 @@ import lazyload from './components/lazyload'
     .then(response => response.json())
     .then(render)
 
+  //get TopList
+  fetch('../json/rank.json')
+    .then(response => response.json())
+    .then(rankList)
+
   function render(json){
     NavBar()
     let slides = json.data.slider.map(slide => {
@@ -25,6 +30,11 @@ import lazyload from './components/lazyload'
     new Slider('slider', slides)
     renderRadios(json.data.radioList)
     renderSongLists(json.data.songList)
+    lazyload(document.querySelectorAll('.lazyload'))
+  }
+
+  function rankList(json){
+    renderRankList(json.data.topList)
     lazyload(document.querySelectorAll('.lazyload'))
   }
 
@@ -62,5 +72,30 @@ import lazyload from './components/lazyload'
     }).join('')
 
   }
+
+  function renderRankList(topLists){
+    document.getElementById('rank-list').innerHTML = topLists.map(topList => {
+      return `
+        <li class="topic_item" data-id="4" data-type="0">
+        <div class="topic_main">
+          <a href="#" class="topic_media">
+              <img class="lazyload" data-src="${topList.picUrl}" src="../imgs/default_pic.jpg">
+              <span class="listen_count"><i class="icon icon_listen"></i>${(topList.listenCount / 10000).toFixed(1)}万</span>
+          </a>
+          <div class="topic_info">
+              <div class="topic_cont">
+                  <h3 class="topic_tit">${topList.topTitle}</h3>
+                  ${topList.songList.map((list, idx) => {
+                    return `<p>${idx+1}<span class="text_name">${list.songname}</span>-${list.singername}</p>`
+                  }).join('')}
+              </div>
+              <i class="topic_arrow"></i>
+          </div>
+        </div>
+      </li>
+        `
+    }).join('')
+  }
+
 
 })()
