@@ -10,7 +10,7 @@ import lazyload from './components/lazyload'
 (function(){
 
   //get Data
-  fetch('../json/recom.json')
+  fetch('https://music-api-oiwxkoneso.now.sh')
     .then(response => response.json())
     .then(render)
 
