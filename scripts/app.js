@@ -10,7 +10,8 @@ import lazyload from './components/lazyload'
 (function(){
 
   //get Data
-  fetch('https://music-api-oiwxkoneso.now.sh')
+  // fetch('https://music-api-oiwxkoneso.now.sh')
+  fetch('../json/recom.json')
     .then(response => response.json())
     .then(render)
 
@@ -65,7 +66,7 @@ import lazyload from './components/lazyload'
             <img class="lazyload" src="../imgs/default_pic.jpg" data-src="${songlist.picUrl}" alt="#">
             <span class="icon icon-play"></span>
             </div>
-            <div class="list-info"><h3>${songlist.Ftitle}</h3></div>
+            <div class="list-info"><h3>${songlist.songListDesc}</h3></div>
           </a>
         </li>
       `

@@ -36,7 +36,16 @@
         <ul id="rank-list"></ul>
       </div>
       <div id="search-view" class="hide">
-        搜索
+        <div class="search-bar" id="input-wrap">
+          <div id="input-wrap" class="search-bar-cont">
+            <form action="#" method="get" id="search-form">
+              <input type="search" id="search-input" autocorrect="off" placeholder="搜索歌曲、歌单、专辑">
+              <span class="icon icon-search">搜索</span>
+              <span class="icon icon-delete">删除</span>
+            </form>
+          </div>
+          <div id="cancel-btn" class="search-bar-tip-text">取消</div>
+        </div>
       </div>
     </div>
     <script src="./dist/app.js"></script>
