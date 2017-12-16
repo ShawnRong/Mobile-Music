@@ -8,7 +8,6 @@
     position: relative;
     border-radius: 3px;
     background: #fff;
-    height: 20px;
     padding: 8px 12px 8px 35px;
     flex: 1;
     #search-input {
@@ -17,7 +16,11 @@
       width: 100%;
       color: rgba(0, 0, 0, .3);
       border: none;
-      font-size: 14px
+      font-size: 14px;
+      outline: none;
+    }
+    #search-input[type="search"]{
+      padding: 10px 0px;
     }
     .icon-search {
       position: absolute;
@@ -26,14 +29,135 @@
       width: 18px;
       height: 18px;
     }
-    .icon-delete {
+    .icon-cancelcircled {
       position: absolute;
-      top: 9px;
+      top: 10px;
       right: 12px;
       width: 18px;
       height: 18px;
-      background: #b1b1b1;
-      border-radius: 99px
+      // background: #b1b1b1;
+      border-radius: 99px;
     }
   }
+  .search-bar-tip-text{
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+  }
+}
+
+#focus-wrapper {
+  #search-result {
+    .search-content{
+      li {
+        position: relative;
+        height: 55px;
+        padding-left: 56px;
+        overflow: hidden;
+        .media {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          width: 40px;
+          height: 40px;
+          img {
+            width: 100%;
+            color: #ccc;
+          }
+        }
+        .icon-music {
+          top: 18px;
+          left: 18px;
+          width: 22px;
+          height: 20px;
+          position: absolute;
+          background-position: 0 0;
+          background-size: 22px 30px;
+          background-repeat: no-repeat;
+          background-image: url('../imgs/search.png');
+        }
+        .main-tit {
+          margin: 10px 0 2px;
+          line-height: 18px;
+          font-size: 16px;
+          font-weight: normal;
+          color: #000;
+          &,.sub-tit{
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+        .sub-tit {
+          color: #808080;
+        }
+        &::after{
+          content: "";
+          position: absolute;
+          height: 1px;
+          top: 0;
+          left: 0;
+          right: 0;
+          background: #e5e5e5;
+        }
+      }
+    }
+  }
+
+  .search-loading {
+    height: 55px;
+    text-align: center;
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    &.show { display: flex; }
+    .loading-icon {
+      top: -2px;
+      width: 20px;
+      height: 20px;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      background-size: 20px 20px;
+      background-image: url('../imgs/icon_loading.png');
+      animation: loading 1s infinite;
+    }
+    .loading-text {
+      margin-left: 5px;
+    }
+    .loading-done, .loading-text {
+      color: #808080;
+      font-size: 12px;
+    }
+  }
+}
+
+@keyframes loading {
+  from { transform: rotate(0deg) }
+  8.32% { transform: rotate(0deg) }
+  8.33% { transform: rotate(30deg) }
+  16.65% { transform: rotate(30deg) }
+  16.66% { transform: rotate(60deg) }
+  24.99% { transform: rotate(60deg) }
+  25% { transform: rotate(90deg) }
+  33.32% { transform: rotate(90deg) }
+  33.33% { transform: rotate(120deg) }
+  41.65% { transform: rotate(120deg) }
+  41.66% { transform: rotate(150deg) }
+  49.99% { transform: rotate(150deg) }
+  50% { transform: rotate(180deg) }
+  58.32% { transform: rotate(180deg) }
+  58.33% { transform: rotate(210deg) }
+  66.65% { transform: rotate(210deg) }
+  66.66% { transform: rotate(240deg) }
+  74.99% { transform: rotate(240deg) }
+  75% { transform: rotate(270deg) }
+  83.32% { transform: rotate(270deg) }
+  83.33% { transform: rotate(300deg) }
+  91.65% { transform: rotate(300deg) }
+  91.66% { transform: rotate(330deg) }
+  99.99% { transform: rotate(330deg) }
 }

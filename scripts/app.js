@@ -3,6 +3,7 @@ import('../sass/app.scss')
 import Slider from './components/slider'
 import NavBar from './components/navbar'
 import lazyload from './components/lazyload'
+import Search from './components/search'
 //CommonJS
 // const Slider = require('./components/slider')
 
@@ -38,6 +39,9 @@ import lazyload from './components/lazyload'
     renderRankList(json.data.topList)
     lazyload(document.querySelectorAll('.lazyload'))
   }
+
+  //Search 组件
+  let search = new Search(document.getElementById('search-view'))
 
   //radios
   function renderRadios(radios) {

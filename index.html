@@ -40,11 +40,22 @@
           <div id="input-wrap" class="search-bar-cont">
             <form action="#" method="get" id="search-form">
               <input type="search" id="search-input" autocorrect="off" placeholder="搜索歌曲、歌单、专辑">
-              <span class="icon icon-search">搜索</span>
-              <span class="icon icon-delete">删除</span>
+              <span class="iconfont icon-search"></span>
+              <span class="iconfont icon-cancelcircled"></span>
             </form>
           </div>
           <div id="cancel-btn" class="search-bar-tip-text">取消</div>
+        </div>
+        <div id="focus-wrapper">
+          <div id="search-result">
+            <ul class="search-content">
+            </ul>
+          </div>
+          <div class="search-loading">
+            <i class="loading-icon"></i>
+            <div class="loading-text">正在载入更多...</div>
+            <div class="loading-done hide">已加载全部</div>
+          </div>
         </div>
       </div>
     </div>
