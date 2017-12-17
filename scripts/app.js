@@ -4,9 +4,33 @@ import Slider from './components/slider'
 import NavBar from './components/navbar'
 import lazyload from './components/lazyload'
 import Search from './components/search'
+import MusicPlayer from './components/music_player'
 //CommonJS
 // const Slider = require('./components/slider')
 
+
+//音乐播放器
+let player = new MusicPlayer(document.getElementById('player'))
+document.querySelector('.show-player').addEventListener('click', () => {
+  player.show()
+})
+
+onHashChange()
+addEventListener('hashchange', onHashChange)
+function onHashChange() {
+  let hash = location.hash
+  if(/^#player\?.+/.test(hash)) {
+    let matches = hash.slice(hash.indexOf('?') + 1).match(/(\w+)=([^&]+)/g)
+    let options = matches && matches.reduce((res, cur) => {
+      let arr = cur.split('=')
+      res[arr[0]] = decodeURIComponent(arr[1])
+      return res
+    }, {})
+    player.play(options)
+  } else {
+    player.hide()
+  }
+}
 
 (function(){
 

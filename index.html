@@ -11,7 +11,7 @@
   <body>
     <header class="mod-header">
       <i class="logo">QQ音乐</i>
-      <a href="#" class="btn-download">下载APP</a>
+      <div class="show-player">播放器</div>
     </header>
     <nav class="navbar">
       <ul class="nav-list">
@@ -58,6 +58,27 @@
           </div>
         </div>
       </div>
+    </div>
+    <div id="player">
+      <div class="player-container">
+        <div class="player-header">
+          <img class="album-cover">
+          <div class="song-info">
+            <div class="song-name ellipsis"></div>
+            <div class="song-artist ellipsis"></div>
+          </div>
+          <span class="icon-action icon-play"></span>
+        </div>
+        <div class="player-lyrics"></div>
+        <div class="player-footer">
+          <dic class="icon-list"></dic>
+          <div class="progress"></div>
+          <div class="actions">
+            <a href="#" class="btn-download">下载这首歌</a>
+          </div>
+        </div>
+      </div>
+      <div class="player-background"></div>
     </div>
     <script src="./dist/app.js"></script>
   </body>
