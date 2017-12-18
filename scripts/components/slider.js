@@ -16,8 +16,8 @@ class Slider {
     group.innerHTML = this.slides.map(slide =>
       `
         <div class="ui-slider-item">
-          <a href="${slide.link}">
-            <img src="${slide.image}" alt="slide-img">
+          <a href="${slide.linkUrl}">
+            <img src="${slide.picUrl}" alt="slide-img">
           </a>
         </div>
       `
