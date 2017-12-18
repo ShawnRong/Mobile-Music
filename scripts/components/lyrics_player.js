@@ -45,7 +45,7 @@ class LyricsPlayer {
     let html = this.lyrics.map(line => `
       <div class="player-lyrics-line">${line.slice(10)}</div>
     `).join('')
-    this.line.innerHTML = html
+    this.lines.innerHTML = html
   }
 
   reset(text) {

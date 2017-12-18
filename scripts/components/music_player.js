@@ -27,7 +27,7 @@ class MusicPlayer {
   handleEvent(event) {
     let target = event.target
     switch(true) {
-      case target.matches('.icon-player'):
+      case target.matches('.icon-play'):
         this.onPlay(event)
         break
       case target.matches('.icon-pause'):
@@ -63,7 +63,7 @@ class MusicPlayer {
     this.el.querySelector('.song-artist').innerText = options.artist
     this.progress.reset(options.duration)
 
-    let coverUrl = albumCoverUrl(options.albumid)
+    let coverUrl = albumCoverUrl(options.albummid)
     this.el.querySelector('.album-cover').src = coverUrl
     this.el.querySelector('.player-background').style.backgroundImage = `url(${coverUrl})`
 
@@ -72,12 +72,12 @@ class MusicPlayer {
         this.el.querySelector('.icon-action').className = 'icon-action icon-play'
       }
 
-      this.songid = option.songid
+      this.songid = options.songid
       this.audio.src = songUrl(this.songid)
       this.fetching = true
       fetch(lyricsUrl(this.songid))
         .then(res => res.json())
-        .then(json => json.lyrics)
+        .then(json => json.lyric)
         .then(text => this.lyrics.reset(text))
         .catch(() => {})
         .then(() => this.fetching = false)

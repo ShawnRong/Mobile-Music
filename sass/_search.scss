@@ -49,6 +49,51 @@
 }
 
 #focus-wrapper {
+  #record-keys {
+    background: #fff;
+    display: none;
+    li {
+      border-top: 1px solid #ededed;
+      padding: 0 15px;
+      list-style: none;
+      a {
+        position: relative;
+        display: block;
+        height: 44px;
+        line-height: 44px;
+        text-decoration: none;
+        .iconfont {
+          position: absolute;
+          left: 0;
+          color: #c8c8c8;
+          font-size: 20px;
+        }
+        .keyword {
+          position: absolute;
+          left: 40px;
+          right: 50px;
+          height: 44px;
+          line-height: 44px;
+          color: #000;
+          font-size: 14px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    #record-clear-btn {
+      text-align: center;
+      height: 44px;
+      line-height: 44px;
+      font-size: 12px;
+      a {
+        display: inline-block;
+        line-height: 44px;
+        color: #47c88a;
+      }
+    }
+  }
   #search-result {
     .search-content{
       li {

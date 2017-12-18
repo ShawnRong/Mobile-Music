@@ -16,13 +16,18 @@ class Search {
     this.clear.style.display = 'none';
     this.input.addEventListener('input', this.showClearInput.bind(this))
     this.clear.addEventListener('click', this.clearInput.bind(this))
+    this.recordElement = this.el.querySelector('#record-keys')
+    this.renderRecords()
+    this.recordElement.querySelector('#record-clear-btn').addEventListener('click', this.clearRecord.bind(this))
   }
 
   onKeyUp(event) {
     let keyword =event.target.value.trim()
     if (!keyword) return this.reset()
     if (event.key !== 'Enter') return
+    this.recordElement.style.display = 'none'
     this.search(keyword)
+    this.record(keyword)
   }
 
   onScroll(event) {
@@ -65,6 +70,7 @@ class Search {
       `
     }).join('')
     this.songs.insertAdjacentHTML('beforeend', html)
+    this.songs.style.display = 'block'
   }
 
   loading() {
@@ -96,6 +102,54 @@ class Search {
   }
   clearInput(){
     this.input.value = ''
+    this.songs.style.display = 'none'
+    this.renderRecords()
+  }
+
+
+  renderRecords(){
+    let keywords = localStorage.getItem('search_history');
+    if (keywords) {
+      let html = keywords.split(',').map(keyword => 
+        `
+        <li>
+          <a href="#">
+            <span class="iconfont icon-shijian"></span>
+            <span class="keyword">${keyword}</span>
+          </a>
+        </li>
+        `
+      ).join('')
+      this.recordElement.style.display = 'block'
+      this.recordElement.querySelector('ul').innerHTML = html
+    }else{
+      this.recordElement.style.display = 'none'
+    }
+  }
+
+  record(keyword){
+    let keywords = localStorage.getItem('search_history');
+    if (keywords) {
+      if (keywords.search(keyword) > 0) {
+        let pattern = `${keyword},?`
+        let regex = new RegExp(pattern)
+        console.log(regex)
+        keywords = keywords.replace(regex, '')
+        keywords = keyword + ',' + keywords
+        keywords = keywords.replace(/,\s*$/, '')
+        localStorage.setItem('search_history', keywords)
+      }else{
+        keywords = keyword + ',' + keywords
+        localStorage.setItem('search_history', keywords)
+      }
+    } else {
+      localStorage.setItem('search_history', keyword)
+    }
+  }
+
+  clearRecord(){
+    localStorage.removeItem('search_history')
+    this.renderRecords()
   }
 }
 
