@@ -80,7 +80,8 @@ module.exports = {
             {
               loader: 'file-loader',
               options: {
-                name: '/assets/[name]_[sha512:hash:base64:7].[ext]'
+                name: '/assets/[name]_[sha512:hash:base64:7].[ext]',
+                useRelativePath: true
               },
             }
         ]
