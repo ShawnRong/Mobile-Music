@@ -1,8 +1,10 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //minimize js file
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+//autoprefixer
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
   context: path.resolve(process.cwd(), "scripts"),
@@ -15,7 +17,7 @@ module.exports = {
     port: 1024,
     // compress: true
   },
-  watch: true,
+  // watch: true,
   output: {
     publicPath: '/dist',
     path: path.resolve(process.cwd(), "dist"),
@@ -24,21 +26,40 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            // use: "css-loader"
             //compress css
-            use: { loader: 'css-loader', options: { minimize: true } }
+            use: [
+              { loader: 'css-loader', options: { minimize: true} },
+              { 
+                loader: 'postcss-loader', 
+                options: {
+                  ident: 'postcss', 
+                  plugins: () => [autoprefixer]
+                }
+              },
+              { loader: 'sass-loader' },
+            ]
         })
       },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'sass-loader']
-        }),
-      },
+      // {
+      //   test: /\.scss$/,
+      //   use: ExtractTextPlugin.extract({
+      //       fallback: 'style-loader',
+      //       use: [
+      //         'css-loader', 
+      //         'sass-loader',
+      //         { 
+      //           loader: 'postcss-loader', 
+      //           options: {
+      //             // ident: 'postcss', // <= this line
+      //             plugins: () => [autoprefixer]
+      //           }
+      //         }
+      //       ]
+      //   }),
+      // },
       {
          test: /\.(js|jsx)$/,
          exclude: /(node_modules|bower_components)/,
@@ -59,7 +80,7 @@ module.exports = {
             {
               loader: 'file-loader',
               options: {
-                name: 'assets/[name]_[sha512:hash:base64:7].[ext]'
+                name: '/assets/[name]_[sha512:hash:base64:7].[ext]'
               },
             }
         ]
@@ -71,6 +92,6 @@ module.exports = {
       filename: '[name].bundle.css',
       allChunks: true,
     }),
-    // new UglifyJsPlugin(),
+    new UglifyJsPlugin(),
   ]
 }
